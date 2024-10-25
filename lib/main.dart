@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:uem_food/experiment.dart';
+import 'package:uem_food/pages/home_page.dart';
 import 'package:uem_food/pages/landing_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
 void main() async {
-    WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(fontFamily: 'allfont'),
       debugShowCheckedModeBanner: false,
-      home: const LandingPage(),
+      home: HomePage(),
     );
   }
 }
