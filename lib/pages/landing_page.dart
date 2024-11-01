@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:uem_food/pages/home_page.dart';
+import 'package:uem_food/pages/login_page.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -18,14 +19,13 @@ class _LandingPageState extends State<LandingPage>
     Future.delayed(const Duration(seconds: 3), () {
       Navigator.of(context)
           .pushReplacement(MaterialPageRoute(builder: (context) {
-        return const HomePage();
+        return const LoginPage();
       }));
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       body: Center(
         //container for written text

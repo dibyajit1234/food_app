@@ -17,6 +17,7 @@ class ProductDisplay extends StatefulWidget {
   State<ProductDisplay> createState() => _ProductDisplay();
 }
 
+int? count;
 int itemcount = 1;
 
 class _ProductDisplay extends State<ProductDisplay> {
@@ -89,7 +90,7 @@ class _ProductDisplay extends State<ProductDisplay> {
                         onPressed: () {
                           setState(() {
                             itemcount > 1 ? itemcount-- : 0;
-                            print(itemcount);
+                     
                           });
                         },
                         child: const Icon(
@@ -114,7 +115,7 @@ class _ProductDisplay extends State<ProductDisplay> {
                           setState(() {
                             itemcount++;
                           });
-                          print(itemcount);
+                          
                         },
                         child: const Icon(
                           Icons.add,
@@ -155,12 +156,14 @@ class _ProductDisplay extends State<ProductDisplay> {
                             "title": widget.item,
                             "price": widget.price,
                             "imageUrl": widget.imageUrl,
-                            "itemcount": itemcount.toString(),
+                            "itemcount": itemcount,
                           });
+
                           ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
                                   duration: Duration(seconds: 1),
                                   content: Text("Item is added to cart !")));
+                          itemcount = 1;
                         },
                         child: const Text(
                           "Add to cart",

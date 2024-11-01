@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:uem_food/cart_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:uem_food/pages/landing_page.dart';
+import 'package:uem_food/pages/login_page.dart';
 import 'firebase_options.dart';
 
 void main() async {

@@ -60,7 +60,7 @@ class _HomepageItems extends State<HomepageItems> {
                       padding: EdgeInsets.only(left: 10.0),
                       child: SizedBox(
                         child: Text(
-                          "Hi! Hungry?",
+                          "H! Hungry?",
                           style: TextStyle(
                             color: Color.fromARGB(255, 255, 107, 96),
                             fontSize: 50,
