@@ -46,7 +46,8 @@ class _HomepageItems extends State<HomepageItems> {
                         CircleAvatar(
                           backgroundImage:
                               AssetImage("assets/images/profile.jpg"),
-                        )
+                        ),
+                        
                       ],
                     ),
                     const Text(

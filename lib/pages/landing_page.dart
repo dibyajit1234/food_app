@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:uem_food/pages/home_page.dart';
 import 'package:uem_food/pages/login_page.dart';
 
 class LandingPage extends StatefulWidget {

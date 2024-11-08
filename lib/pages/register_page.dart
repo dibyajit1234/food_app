@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:uem_food/auth_service.dart';
+import 'package:uem_food/pages/home_page.dart';
 import 'package:uem_food/pages/login_page.dart';
 
-class RegisterPage extends StatelessWidget {
+class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
 
+  @override
+  State<RegisterPage> createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
+  final _auth = AuthService();
+  final _name = TextEditingController();
+  final _email = TextEditingController();
+  final _password = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,11 +32,12 @@ class RegisterPage extends StatelessWidget {
               const SizedBox(
                 height: 50,
               ),
-              const SizedBox(
+              SizedBox(
                 height: 50,
                 width: double.infinity,
                 child: TextField(
-                  decoration: InputDecoration(
+                  controller: _name,
+                  decoration: const InputDecoration(
                     hintText: "Name",
                     enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.black)),
@@ -40,11 +52,12 @@ class RegisterPage extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const SizedBox(
+              SizedBox(
                 height: 50,
                 width: double.infinity,
                 child: TextField(
-                  decoration: InputDecoration(
+                  controller: _email,
+                  decoration: const InputDecoration(
                     hintText: "Email",
                     enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.black)),
@@ -59,11 +72,12 @@ class RegisterPage extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const SizedBox(
+              SizedBox(
                 height: 50,
                 width: double.infinity,
                 child: TextField(
-                  decoration: InputDecoration(
+                  controller: _password,
+                  decoration: const InputDecoration(
                     hintText: "Password",
                     enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.black)),
@@ -79,28 +93,40 @@ class RegisterPage extends StatelessWidget {
                 height: 20,
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () async {
+                  final user = await _auth.signInWithEmailAndPassword(
+                      _email.text, _password.text);
+                  if (user != null) {
+                    print("user created successfully");
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => const HomePage()));
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      duration: Duration(seconds: 1),
+                        content: Text("Invalid username or password!")));
+                  }
+                },
+                style: const ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll(
+                        Color.fromARGB(255, 255, 82, 70))),
                 child: const Text(
                   "Register",
                   style: TextStyle(
                       color: Colors.white, fontWeight: FontWeight.bold),
                 ),
-                style: ButtonStyle(
-                    backgroundColor: WidgetStatePropertyAll(
-                        Color.fromARGB(255, 255, 82, 70))),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Already registered ? "),
+                  const Text("Already registered ? "),
                   TextButton(
                       onPressed: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return LoginPage();
+                          return const LoginPage();
                         }));
                       },
-                      child: Text("Login"))
+                      child: const Text("Login"))
                 ],
               )
             ],
