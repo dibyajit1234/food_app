@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:uem_food/cart_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:uem_food/pages/home_page.dart';
 import 'package:uem_food/pages/landing_page.dart';
-import 'package:uem_food/pages/payment_page.dart';
-import 'package:uem_food/pages/recipt_page.dart';
 import '../firebase_options.dart';
 
 void main() async {
@@ -25,7 +24,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         theme: ThemeData(fontFamily: 'allfont'),
         debugShowCheckedModeBanner: false,
-        home: const LandingPage(),
+        home: const HomePage(),
       ),
     );
   }

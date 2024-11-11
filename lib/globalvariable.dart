@@ -6,56 +6,56 @@ final resturants = [
       {
         'id': 0,
         'title': 'Fish Rice',
-        'price': 70,
-        'imageUrl': "assets/images/fish.png",
+        'price': 80,
+        'imageUrl': "assets/images/fish curry.png",
       },
       {
         'id': 1,
         'title': 'Chicken Rice',
         'price': 90,
-        'imageUrl': "assets/images/profile.jpg",
+        'imageUrl': "/home/arpan/Documents/GitHub/food_app/assets/images/chickenrice.png",
       },
       {
         'id': 2,
         'title': 'Eggroll',
-        'price': 50,
-        'imageUrl': "assets/images/profile.jpg",
+        'price': 40,
+        'imageUrl': "/home/arpan/Documents/GitHub/food_app/assets/images/roll.png",
       },
       {
         'id': 3,
-        'title': 'Bred-omlet',
+        'title': 'Bread-omlette',
         'price': 35,
-        'imageUrl': "assets/images/profile.jpg",
+        'imageUrl': "/home/arpan/Documents/GitHub/food_app/assets/images/omelette_PNG26.png",
       },
       {
         'id': 4,
         'title': 'Chai',
         'price': 10,
-        'imageUrl': "assets/images/profile.jpg",
+        'imageUrl': "/home/arpan/Documents/GitHub/food_app/assets/images/Tea-Cup-PNG-Photo-Image.png",
       },
       {
         'id': 5,
-        'title': 'frooti',
+        'title': 'Mountain Dew',
         'price': 20,
-        'imageUrl': "assets/images/profile.jpg",
+        'imageUrl': "/home/arpan/Documents/GitHub/food_app/assets/images/mountaindew.png",
       },
       {
         'id': 6,
         'title': 'Maggi',
         'price': 30,
-        'imageUrl': "assets/images/profile.jpg",
+        'imageUrl': "/home/arpan/Documents/GitHub/food_app/assets/images/maggie.png",
       },
       {
         'id': 7,
-        'title': 'White Checken',
+        'title': 'Chowmin',
         'price': 60,
-        'imageUrl': "assets/images/profile.jpg",
+        'imageUrl': "/home/arpan/Documents/GitHub/food_app/assets/images/chowmin.png",
       },
       {
         'id': 8,
         'title': 'parata',
         'price': 60,
-        'imageUrl': "assets/images/profile.jpg",
+        'imageUrl': "/home/arpan/Documents/GitHub/food_app/assets/images/paratha.png",
       },
     ]
   },
@@ -65,14 +65,14 @@ final resturants = [
     'products': [
       {
         'id': 0,
-        'title': 'jimjam',
+        'title': 'Kurkure',
         'price': 10,
         'imageUrl': "assets/images/fish.png",
       },
       {
         'id': 1,
-        'title': 'happy happy',
-        'price': 10,
+        'title': 'Coffee',
+        'price': 20,
         'imageUrl': "assets/images/fish.png",
       },
       {
@@ -83,14 +83,14 @@ final resturants = [
       },
       {
         'id': 3,
-        'title': 'bred-omlet',
-        'price': 45,
+        'title': 'KitKat',
+        'price': 30,
         'imageUrl': "assets/images/fish.png",
       }
     ]
   },
   {
-    'canteen': 'Chinees canteen',
+    'canteen': 'Chinese canteen',
     'image': 'assets/images/bengali-canteen.png',
     'products': [
       {
@@ -101,43 +101,43 @@ final resturants = [
       },
       {
         'id': 1,
-        'title': 'Chowmin',
+        'title': 'Mixed Chowmin',
         'price': 60,
         'imageUrl': "assets/images/profile.jpg",
       },
       {
         'id': 2,
-        'title': 'Eggroll',
+        'title': 'Chicken Lolipop',
         'price': 45,
         'imageUrl': "assets/images/profile.jpg",
       },
       {
         'id': 3,
-        'title': 'Chai',
+        'title': 'Tea',
         'price': 10,
         'imageUrl': "assets/images/profile.jpg",
       },
       {
         'id': 4,
-        'title': 'Paratha',
+        'title': 'Aloo Paratha',
         'price': 40,
         'imageUrl': "assets/images/profile.jpg",
       },
       {
         'id': 5,
-        'title': 'Mountain Dew',
-        'price': 90,
+        'title': 'String',
+        'price': 20,
         'imageUrl': "assets/images/profile.jpg",
       },
       {
         'id': 6,
-        'title': 'Manchurian',
+        'title': 'Chicken Manchurian',
         'price': 70,
         'imageUrl': "assets/images/profile.jpg",
       },
       {
         'id': 7,
-        'title': 'Butter Checken',
+        'title': 'Butter Chicken',
         'price': 310,
         'imageUrl': "assets/images/profile.jpg",
       },
