@@ -3,7 +3,9 @@ import 'package:provider/provider.dart';
 import 'package:uem_food/cart_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:uem_food/pages/landing_page.dart';
-import 'firebase_options.dart';
+import 'package:uem_food/pages/payment_page.dart';
+import 'package:uem_food/pages/recipt_page.dart';
+import '../firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

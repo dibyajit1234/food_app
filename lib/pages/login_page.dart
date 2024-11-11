@@ -1,5 +1,6 @@
+
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:uem_food/auth_service.dart';
 import 'package:uem_food/pages/home_page.dart';
 import 'package:uem_food/pages/register_page.dart';
@@ -17,10 +18,25 @@ class _LoginPageState extends State<LoginPage> {
   final _password = TextEditingController();
   @override
   Widget build(BuildContext context) {
+
+
+
+
     return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 100,
+        automaticallyImplyLeading: false,
+        title: Center(
+          child: Text(
+            "^ Foodgo ^",
+            style: TextStyle(
+                fontFamily: 'updock', fontSize: 55, color: Colors.red),
+          ),
+        ),
+      ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.only(left: 20, right: 20, bottom: 40),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -56,6 +72,7 @@ class _LoginPageState extends State<LoginPage> {
                 width: 500,
                 child: TextField(
                   controller: _password,
+                  obscureText: true,
                   decoration: const InputDecoration(
                     hintText: "Password",
                     enabledBorder: OutlineInputBorder(
@@ -106,34 +123,34 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              GestureDetector(
-                onTap: () {
-                  // await _auth.signinWithgoogle();
-                },
-                child: Container(
-                  width: double.infinity,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                        color: const Color.fromARGB(255, 192, 192, 192),
-                        width: 2),
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        FontAwesomeIcons.google,
-                        color: Colors.red,
-                      ),
-                      Text("  Login with google")
-                    ],
-                  ),
-                ),
-              ),
+              // const SizedBox(
+              //   height: 20,
+              // ),
+              // GestureDetector(
+              //   onTap: () {
+              //     // await _auth.signinWithgoogle();
+              //   },
+              //   child: Container(
+              //     width: double.infinity,
+              //     height: 40,
+              //     decoration: BoxDecoration(
+              //       border: Border.all(
+              //           color: const Color.fromARGB(255, 192, 192, 192),
+              //           width: 2),
+              //       borderRadius: BorderRadius.circular(30),
+              //     ),
+              //     child: const Row(
+              //       mainAxisAlignment: MainAxisAlignment.center,
+              //       children: [
+              //         Icon(
+              //           FontAwesomeIcons.google,
+              //           color: Colors.red,
+              //         ),
+              //         Text("  Login with google")
+              //       ],
+              //     ),
+              //   ),
+              // ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

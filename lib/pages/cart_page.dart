@@ -11,11 +11,14 @@ class CartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final cart = Provider.of<CartProvider>(context, listen: true).cart;
 
-    final totalprice = cart.fold(0, (sum, item) {
-      final price = int.tryParse(item['price']) ?? 0;
-      final itemCount = item['itemcount'] as int;
-      return sum + (price * itemCount);
-    });
+    final totalprice = cart.fold(
+      0,
+      (sum, item) {
+        final price = int.tryParse(item['price']) ?? 0;
+        final itemCount = item['itemcount'] as int;
+        return sum + (price * itemCount);
+      },
+    );
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -123,7 +126,9 @@ class CartPage extends StatelessWidget {
                       totalprice != 0
                           ? Navigator.of(context)
                               .push(MaterialPageRoute(builder: (context) {
-                              return const PaymentPage();
+                              return PaymentPage(
+                                totalprice: totalprice,
+                              );
                             }))
                           : showDialog(
                               context: context,
@@ -135,8 +140,8 @@ class CartPage extends StatelessWidget {
                                         fontWeight: FontWeight.bold,
                                         color: Colors.red),
                                   ),
-                                  content:
-                                      const Text("Add some products to cart first!!"),
+                                  content: const Text(
+                                      "Add some products to cart first!!"),
                                   actions: [
                                     TextButton(
                                         onPressed: () {

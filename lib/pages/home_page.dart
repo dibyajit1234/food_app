@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:uem_food/pages/cart_page.dart';
 import 'package:uem_food/pages/homepage_items.dart';
@@ -17,6 +18,21 @@ class _HomePageState extends State<HomePage> {
       FirebaseFirestore.instance.collection("user");
   @override
   Widget build(BuildContext context) {
+
+        FirebaseAuth.instance;
+
+    // Get the current user
+    final user = FirebaseAuth.instance.currentUser;
+
+    // Access the user's email
+    String userEmail = user?.email ?? '';
+
+    // Use the email as needed
+    print('Logged-in user email: $userEmail');
+
+
+
+
     return Scaffold(
         bottomNavigationBar: BottomNavigationBar(
           selectedFontSize: 0,
