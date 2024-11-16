@@ -143,7 +143,7 @@ class _ProductDisplay extends State<ProductDisplay> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      widget.price,
+                      "₹ ${widget.price}",
                       style: const TextStyle(
                           fontSize: 30,
                           color: Colors.white,

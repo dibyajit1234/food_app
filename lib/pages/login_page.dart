@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-
 import 'package:uem_food/functions/auth_service.dart';
 import 'package:uem_food/pages/home_page.dart';
 import 'package:uem_food/pages/register_page.dart';
@@ -18,10 +16,6 @@ class _LoginPageState extends State<LoginPage> {
   final _password = TextEditingController();
   @override
   Widget build(BuildContext context) {
-
-
-
-
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 100,
@@ -98,7 +92,7 @@ class _LoginPageState extends State<LoginPage> {
                     final user = await _auth.loginWithEmailAndPassword(
                         _email.text, _password.text);
                     if (user != null) {
-                      print("user logged in succesfully");
+                      print("user  logged in succesfully");
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) {
@@ -135,7 +129,7 @@ class _LoginPageState extends State<LoginPage> {
                           return const RegisterPage();
                         }));
                       },
-                      child: const Text("Regester"))
+                      child: const Text("Register"))
                 ],
               )
             ],

@@ -225,7 +225,7 @@ class _ProductListState extends State<ProductList> {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) {
-                            return CartPage();
+                            return const CartPage();
                           },
                         ),
                       );

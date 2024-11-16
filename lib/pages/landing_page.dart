@@ -42,7 +42,7 @@ class _LandingPageState extends State<LandingPage>
           child: const Expanded(
             child: Center(
               child: Text(
-                "Food go",
+                "Food Plaza",
                 style: TextStyle(
                     fontSize: 80, color: Colors.white, fontFamily: "updock"),
               ),
