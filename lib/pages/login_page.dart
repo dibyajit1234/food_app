@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'package:uem_food/auth_service.dart';
+import 'package:uem_food/functions/auth_service.dart';
 import 'package:uem_food/pages/home_page.dart';
 import 'package:uem_food/pages/register_page.dart';
 
@@ -26,9 +26,9 @@ class _LoginPageState extends State<LoginPage> {
       appBar: AppBar(
         toolbarHeight: 100,
         automaticallyImplyLeading: false,
-        title: Center(
+        title: const Center(
           child: Text(
-            "^ Foodgo ^",
+            "^ Foodplaza ^",
             style: TextStyle(
                 fontFamily: 'updock', fontSize: 55, color: Colors.red),
           ),
@@ -123,34 +123,6 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-              // const SizedBox(
-              //   height: 20,
-              // ),
-              // GestureDetector(
-              //   onTap: () {
-              //     // await _auth.signinWithgoogle();
-              //   },
-              //   child: Container(
-              //     width: double.infinity,
-              //     height: 40,
-              //     decoration: BoxDecoration(
-              //       border: Border.all(
-              //           color: const Color.fromARGB(255, 192, 192, 192),
-              //           width: 2),
-              //       borderRadius: BorderRadius.circular(30),
-              //     ),
-              //     child: const Row(
-              //       mainAxisAlignment: MainAxisAlignment.center,
-              //       children: [
-              //         Icon(
-              //           FontAwesomeIcons.google,
-              //           color: Colors.red,
-              //         ),
-              //         Text("  Login with google")
-              //       ],
-              //     ),
-              //   ),
-              // ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

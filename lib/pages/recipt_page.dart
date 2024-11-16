@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:uem_food/cart_provider.dart';
+import 'package:uem_food/functions/cart_provider.dart';
 import 'package:uem_food/pages/home_page.dart';
 
 class ReciptPage extends StatelessWidget {
-  final total;
-  final name;
-  final contact;
-  final building;
-  final room;
+  final dynamic total;
+  final dynamic name;
+  final dynamic contact;
+  final dynamic building;
+  final dynamic room;
   const ReciptPage(
       {super.key,
       required this.total,
@@ -27,12 +27,12 @@ class ReciptPage extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) {
-                  return HomePage();
+                  return const HomePage();
                 }));
               },
-              icon: Icon(Icons.home))
+              icon: const Icon(Icons.home))
         ],
-        title: Center(
+        title: const Center(
           child: Text("Reciept"),
         ),
       ),
@@ -41,8 +41,8 @@ class ReciptPage extends StatelessWidget {
           Container(
             height: 150,
             width: double.infinity,
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 214, 231, 245),
+            decoration: const BoxDecoration(
+              color:  Color.fromARGB(255, 214, 231, 245),
             ),
             child: Center(
               child: Padding(
@@ -50,16 +50,16 @@ class ReciptPage extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Text(
+                    const Text(
                       "ORDER CONFORMATION",
                       style:
                           TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      "${name} thank you for your order!!",
-                      style: TextStyle(fontSize: 12),
+                      "$name thank you for your order!!",
+                      style: const TextStyle(fontSize: 12),
                     ),
-                    Column(
+                    const Column(
                       children: [
                         Text(
                           "We've recived your order. You will recive a reciept",
@@ -90,7 +90,7 @@ class ReciptPage extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Text(
+                    const Text(
                       "-: Order Summary :-",
                       style: TextStyle(
                         fontSize: 15,
@@ -140,11 +140,11 @@ class ReciptPage extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
+                            const Text(
                               "Total Amount : ",
                             ),
                             Text(
-                              "Rs. ${total}",
+                              "Rs. $total",
                             )
                           ],
                         ),

@@ -5,8 +5,10 @@ class ProductCard extends StatelessWidget {
   final String imageurl;
   final String productName;
   final int price;
+  final String canteen;
   const ProductCard({
     super.key,
+    required this.canteen,
     required this.productName,
     required this.imageurl,
     required this.price,
@@ -17,7 +19,7 @@ class ProductCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-          return ProductDisplay(imageUrl: imageurl,price: "$price",item: productName,);
+          return ProductDisplay(imageUrl: imageurl,price: "$price",item: productName,canteen: canteen,);
         }));
       },
       child: SizedBox(

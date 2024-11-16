@@ -2,6 +2,9 @@ import 'dart:convert';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
+import 'package:uem_food/functions/cart_provider.dart';
+import 'package:uem_food/functions/firestore.dart';
 import 'package:uem_food/pages/recipt_page.dart';
 
 class PaymentPage extends StatefulWidget {
@@ -13,19 +16,38 @@ class PaymentPage extends StatefulWidget {
 }
 
 class _PaymentPageState extends State<PaymentPage> {
+  DateTime currentTime = DateTime.now();
+  FirestoreService db = FirestoreService();
+
   final name = TextEditingController();
   final contact = TextEditingController();
   final building = TextEditingController();
   final room = TextEditingController();
+  bool validateInput() {
+    if (name.text.isEmpty ||
+        contact.text.isEmpty ||
+        building.text.isEmpty ||
+        room.text.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('All fields are required!')),
+      );
+      return false;
+    }
+    return true;
+  }
+
   @override
   Widget build(BuildContext context) {
+    final cart = Provider.of<CartProvider>(context, listen: true).cart;
+    ;
     FirebaseAuth.instance;
-
-    // Get the current user
     final user = FirebaseAuth.instance.currentUser;
-
-    // Access the user's email
     String userEmail = user?.email ?? '';
+    @override
+    void initState() {
+      super.initState();
+      setState(() {});
+    }
 
     Future sendEmail({
       required String username,
@@ -165,7 +187,7 @@ class _PaymentPageState extends State<PaymentPage> {
                 ),
               ),
               const Text(
-                "* We only provide cash on delevary!!",
+                "* We provide cash on delevary only!!",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               Container(
@@ -197,23 +219,40 @@ class _PaymentPageState extends State<PaymentPage> {
                       ),
                       ElevatedButton(
                         onPressed: () {
+                          Provider.of<CartProvider>(context).adddetails(
+                            {
+                              'procudts': cart,
+                              'name': name.text,
+                              'contact': contact.text,
+                              'building': building.text,
+                              'room No': room.text,
+                              'time': currentTime,
+                            },
+                          );
                           setState(() {});
-                          Navigator.of(context)
-                              .push(MaterialPageRoute(builder: (context) {
-                            return ReciptPage(
-                              total: widget.totalprice,
-                              name: name.text,
-                              contact: contact.text,
-                              building: building.text,
-                              room: room.text,
-                            );
-                          }));
+                          final reciept =
+                              Provider.of<CartProvider>(context).receipt;
+                          db.SaveOrderToDatabase(reciept);
+
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return ReciptPage(
+                                  total: widget.totalprice,
+                                  name: name.text,
+                                  contact: contact.text,
+                                  building: building.text,
+                                  room: room.text,
+                                );
+                              },
+                            ),
+                          );
                           sendEmail(
                               username: name.text,
                               email: userEmail,
                               subject: 'Order conformation',
                               message:
-                                  'your order is confirmed. Your total bill is ${widget.totalprice}. Your products will be delevered as soon as possible, Thank you for chussing Food Go.');
+                                  'your order is confirmed. Your total bill is ${widget.totalprice}. Your products will be delevered as soon as possible, Thank you for choosing Foodplaza.');
                         },
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(

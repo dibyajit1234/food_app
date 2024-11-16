@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:uem_food/cart_provider.dart';
+import 'package:uem_food/functions/cart_provider.dart';
 import 'package:uem_food/pages/home_page.dart';
 import 'package:uem_food/pages/payment_page.dart';
 
@@ -10,7 +10,6 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cart = Provider.of<CartProvider>(context, listen: true).cart;
-
     final totalprice = cart.fold(
       0,
       (sum, item) {

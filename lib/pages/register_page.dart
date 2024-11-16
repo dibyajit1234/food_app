@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:uem_food/auth_service.dart';
+import 'package:uem_food/functions/auth_service.dart';
 import 'package:uem_food/pages/home_page.dart';
 import 'package:uem_food/pages/login_page.dart';
 
@@ -21,9 +21,9 @@ class _RegisterPageState extends State<RegisterPage> {
       appBar: AppBar(
         toolbarHeight: 90,
         automaticallyImplyLeading: false,
-        title: Center(
+        title: const Center(
           child: Text(
-            "^ Foodgo ^",
+            "^ Foodplaza ^",
             style: TextStyle(
                 fontFamily: 'updock', fontSize: 55, color: Colors.red),
           ),

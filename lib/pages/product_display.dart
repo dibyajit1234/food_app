@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:uem_food/cart_provider.dart';
+import 'package:uem_food/functions/cart_provider.dart';
 import 'package:uem_food/pages/cart_page.dart';
 
 class ProductDisplay extends StatefulWidget {
   final String imageUrl;
   final String price;
   final String item;
+  final String canteen;
   const ProductDisplay(
       {super.key,
       required this.imageUrl,
       required this.price,
-      required this.item});
+      required this.item,
+      required this.canteen});
 
   @override
   State<ProductDisplay> createState() => _ProductDisplay();
@@ -57,8 +59,10 @@ class _ProductDisplay extends State<ProductDisplay> {
             //food image
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Image(
-                image: AssetImage(widget.imageUrl),
+              child: Image.asset(
+                widget.imageUrl,
+                width: double.infinity,
+                height: 330,
               ),
             ),
             //food title
@@ -90,7 +94,6 @@ class _ProductDisplay extends State<ProductDisplay> {
                         onPressed: () {
                           setState(() {
                             itemcount > 1 ? itemcount-- : 0;
-                     
                           });
                         },
                         child: const Icon(
@@ -115,7 +118,6 @@ class _ProductDisplay extends State<ProductDisplay> {
                           setState(() {
                             itemcount++;
                           });
-                          
                         },
                         child: const Icon(
                           Icons.add,
@@ -157,6 +159,7 @@ class _ProductDisplay extends State<ProductDisplay> {
                             "price": widget.price,
                             "imageUrl": widget.imageUrl,
                             "itemcount": itemcount,
+                            'canteen': widget.canteen,
                           });
 
                           ScaffoldMessenger.of(context).showSnackBar(
