@@ -1,3 +1,8 @@
 {
-    "cmake.sourceDirectory": "/home/sanglap/Documents/GitHub/food_app/linux"
-}
+    <<<<<<< HEAD
+        "cmake.sourceDirectory": "/home/sanglap/Documents/GitHub/food_app/linux"
+    =======
+        "java.configuration.updateBuildConfiguration": "automatic"
+    >>>>>>> 69301977d76c66ec28943dd63c16b541d04eeec4
+    }
+    

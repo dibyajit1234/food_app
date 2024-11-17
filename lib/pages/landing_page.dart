@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:uem_food/pages/home_page.dart';
+import 'package:uem_food/pages/login_page.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -15,10 +15,10 @@ class _LandingPageState extends State<LandingPage>
   void initState() {
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 3), () {
       Navigator.of(context)
           .pushReplacement(MaterialPageRoute(builder: (context) {
-        return const HomePage();
+        return const LoginPage();
       }));
     });
   }
@@ -42,7 +42,7 @@ class _LandingPageState extends State<LandingPage>
           child: const Expanded(
             child: Center(
               child: Text(
-                "Food go",
+                "Food Plaza",
                 style: TextStyle(
                     fontSize: 80, color: Colors.white, fontFamily: "updock"),
               ),

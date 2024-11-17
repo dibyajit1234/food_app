@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:uem_food/pages/landing_page.dart';
+import 'package:provider/provider.dart';
+import 'package:uem_food/functions/cart_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
+import 'package:uem_food/pages/landing_page.dart';
+import 'functions/firebase_options.dart';
 
 void main() async {
-    WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -16,10 +18,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(fontFamily: 'allfont'),
-      debugShowCheckedModeBanner: false,
-      home: const LandingPage(),
+    return ChangeNotifierProvider(
+      create: (context) => CartProvider(),
+      child: MaterialApp(
+        theme: ThemeData(fontFamily: 'allfont'),
+        debugShowCheckedModeBanner: false,
+        home: const LandingPage(),
+      ),
     );
   }
 }
