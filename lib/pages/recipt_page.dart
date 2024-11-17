@@ -42,7 +42,7 @@ class ReciptPage extends StatelessWidget {
             height: 150,
             width: double.infinity,
             decoration: const BoxDecoration(
-              color:  Color.fromARGB(255, 214, 231, 245),
+              color: Color.fromARGB(255, 214, 231, 245),
             ),
             child: Center(
               child: Padding(
@@ -57,7 +57,8 @@ class ReciptPage extends StatelessWidget {
                     ),
                     Text(
                       "$name thank you for your order!!",
-                      style: const TextStyle(fontSize: 12),
+                      style: const TextStyle(
+                          fontSize: 12, fontWeight: FontWeight.bold),
                     ),
                     const Column(
                       children: [
@@ -79,7 +80,7 @@ class ReciptPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Container(
-              height: 500,
+              height: 450,
               width: double.infinity,
               decoration: BoxDecoration(
                 color: const Color.fromARGB(255, 255, 183, 183),

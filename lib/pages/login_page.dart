@@ -22,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
         automaticallyImplyLeading: false,
         title: const Center(
           child: Text(
-            "^ Foodplaza ^",
+            "^ Food Plaza ^",
             style: TextStyle(
                 fontFamily: 'updock', fontSize: 55, color: Colors.red),
           ),
@@ -36,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               const Text(
                 "Login",
-                style: TextStyle(fontSize: 35),
+                style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
               ),
               const SizedBox(
                 height: 40,

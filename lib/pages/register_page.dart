@@ -23,7 +23,7 @@ class _RegisterPageState extends State<RegisterPage> {
         automaticallyImplyLeading: false,
         title: const Center(
           child: Text(
-            "^ Foodplaza ^",
+            "^ Food Plaza ^",
             style: TextStyle(
                 fontFamily: 'updock', fontSize: 55, color: Colors.red),
           ),

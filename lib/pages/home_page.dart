@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
           toolbarHeight: 60,
           title: const Center(
             child: Text(
-              "Foodplaza",
+              "Food Plaza",
               style: TextStyle(fontFamily: "updock", fontSize: 45),
             ),
           ),
@@ -154,21 +154,21 @@ class _HomePageState extends State<HomePage> {
                         height: 35,
                       ),
                       for (int i = 0; i < resturants.length; i++)
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Center(
-                            child: GestureDetector(
-                              onTap: () {
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                    builder: (context) {
-                                      return ProductList(
-                                        index: i,
-                                      );
-                                    },
-                                  ),
-                                );
-                              },
+                        Center(
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return ProductList(
+                                      index: i,
+                                    );
+                                  },
+                                ),
+                              );
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
                               child: Container(
                                 height: 150,
                                 width: 350,
@@ -185,12 +185,12 @@ class _HomePageState extends State<HomePage> {
                                       colors: <Color>[
                                         i % 2 != 0
                                             ? const Color.fromARGB(
-                                                255, 194, 194, 194)
+                                                255, 168, 168, 168)
                                             : const Color.fromARGB(
                                                 255, 255, 216, 216),
                                         i % 2 != 0
                                             ? const Color.fromARGB(
-                                                255, 226, 222, 222)
+                                                255, 255, 215, 250)
                                             : const Color.fromARGB(
                                                 255, 255, 120, 86)
                                       ],
@@ -207,8 +207,9 @@ class _HomePageState extends State<HomePage> {
                                       Text(
                                         "${resturants[i]['canteen']}",
                                         style: const TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold),
+                                          fontSize: 24,
+                                          fontFamily: 'boldfont',
+                                        ),
                                       ),
                                     ],
                                   ),

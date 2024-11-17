@@ -105,6 +105,9 @@ flutter:
     - family: dance
       fonts:
         - asset: assets/fonts/DancingScript-VariableFont_wght.ttf
+    - family: lorinda
+      fonts:
+        - asset: assets/fonts/LondrinaSketch-Regular.ttf
         # - asset: fonts/Schyler-Italic.ttf
         #   style: italic
   #   - family: Trajan Pro

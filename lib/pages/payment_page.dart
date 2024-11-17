@@ -187,7 +187,7 @@ class _PaymentPageState extends State<PaymentPage> {
                 ),
               ),
               const Text(
-                "* We provide cash on delevary only!!",
+                "* We provide cash on delivary only!!",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               Container(
@@ -219,40 +219,52 @@ class _PaymentPageState extends State<PaymentPage> {
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          Provider.of<CartProvider>(context).adddetails(
-                            {
-                              'procudts': cart,
-                              'name': name.text,
-                              'contact': contact.text,
-                              'building': building.text,
-                              'room No': room.text,
-                              'time': currentTime,
-                            },
-                          );
-                          setState(() {});
-                          final reciept =
-                              Provider.of<CartProvider>(context).receipt;
-                          db.SaveOrderToDatabase(reciept);
-
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return ReciptPage(
-                                  total: widget.totalprice,
-                                  name: name.text,
-                                  contact: contact.text,
-                                  building: building.text,
-                                  room: room.text,
-                                );
+                          if (name.text != '' &&
+                              contact.text != '' &&
+                              building.text != '' &&
+                              room.text != '') {
+                            Provider.of<CartProvider>(context).adddetails(
+                              {
+                                'procudts': cart,
+                                'name': name.text,
+                                'contact': contact.text,
+                                'building': building.text,
+                                'room No': room.text,
+                                'time': currentTime,
                               },
-                            ),
-                          );
-                          sendEmail(
-                              username: name.text,
-                              email: userEmail,
-                              subject: 'Order conformation',
-                              message:
-                                  'your order is confirmed. Your total bill is ${widget.totalprice}. Your products will be delevered as soon as possible, Thank you for choosing Foodplaza.');
+                            );
+                            setState(() {});
+                            final reciept =
+                                Provider.of<CartProvider>(context).receipt;
+                            db.SaveOrderToDatabase(reciept);
+
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return ReciptPage(
+                                    total: widget.totalprice,
+                                    name: name.text,
+                                    contact: contact.text,
+                                    building: building.text,
+                                    room: room.text,
+                                  );
+                                },
+                              ),
+                            );
+                            sendEmail(
+                                username: name.text,
+                                email: userEmail,
+                                subject: 'Order conformation',
+                                message:
+                                    'your order is confirmed. Your total bill is ${widget.totalprice}. Your products will be delevered as soon as possible, Thank you for choosing Foodplaza.');
+                          } else {
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(const SnackBar(
+                              content:
+                                  Text("Please fill all the required fields!!"),
+                              duration: Duration(seconds: 1),
+                            ));
+                          }
                         },
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(

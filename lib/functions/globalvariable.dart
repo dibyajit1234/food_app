@@ -1,4 +1,3 @@
-//sdkjfjksdakf
 final resturants = [
   {
     'canteen': 'Gurukul Canteen',
@@ -132,7 +131,7 @@ final resturants = [
       },
       {
         'id': 21,
-        'title': 'Veg Thali(Dal, Sabji, Rice)',
+        'title': 'Veg Thali',
         'price': 60,
         'imageUrl': "assets/images/veg thali.jpeg",
       },
@@ -158,7 +157,7 @@ final resturants = [
   },
   {
     'canteen': 'Night Canteen',
-    'image': 'assets/images/night-canteen.jpg',
+    'image': 'assets/images/bengali-canteen.png',
     'products': [
       {
         'id': 0,
