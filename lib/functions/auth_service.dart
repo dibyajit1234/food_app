@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'dart:developer';
 
 class AuthService {
   final _auth = FirebaseAuth.instance;
@@ -9,7 +10,7 @@ class AuthService {
           email: email, password: password);
       return cred.user;
     } catch (e) {
-      print(e);
+      log('$e');
     }
     return null;
   }
@@ -21,7 +22,7 @@ class AuthService {
           email: email, password: password);
       return cred.user;
     } catch (e) {
-      print(e);
+      log('$e');
     }
     return null;
   }
@@ -30,7 +31,7 @@ class AuthService {
     try {
       await _auth.signOut();
     } catch (e) {
-      print("user not registered");
+      log("user not registered");
     }
   }
 }

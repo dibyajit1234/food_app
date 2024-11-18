@@ -5,7 +5,7 @@ import 'package:uem_food/functions/auth_service.dart';
 import 'package:uem_food/functions/globalvariable.dart';
 import 'package:uem_food/pages/cart_page.dart';
 import 'package:uem_food/pages/login_page.dart';
-
+import 'dart:developer';
 import 'package:uem_food/pages/product_list.dart';
 
 class HomePage extends StatefulWidget {
@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
     FirebaseAuth.instance;
     final user = FirebaseAuth.instance.currentUser;
     String userEmail = user?.email ?? '';
-    print('Logged-in user email: $userEmail');
+    log('Logged-in user email: $userEmail');
 
     return SafeArea(
       child: Scaffold(
@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
           toolbarHeight: 60,
           title: const Center(
             child: Text(
-              "Food Plaza",
+              "Snacky Panda",
               style: TextStyle(fontFamily: "updock", fontSize: 45),
             ),
           ),
@@ -88,7 +88,7 @@ class _HomePageState extends State<HomePage> {
                                   auth.signout();
                                   Navigator.of(context).push(
                                       MaterialPageRoute(builder: (context) {
-                                    return LoginPage();
+                                    return const LoginPage();
                                   }));
                                 },
                                 child: const Text(

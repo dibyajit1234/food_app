@@ -46,7 +46,7 @@ class CartPage extends StatelessWidget {
                   return ListTile(
                     title: Text("${cart[index]['title']}"),
                     subtitle: Text(
-                        "Rs. ${cart[index]['price']}                Item Count : ${cart[index]['itemcount']}"),
+                        "Rs. ${cart[index]['price']}                       Quantity : ${cart[index]['itemcount']}"),
                     leading: CircleAvatar(
                       backgroundImage: AssetImage(cart[index]['imageUrl']),
                       backgroundColor: Colors.red,
@@ -107,7 +107,7 @@ class CartPage extends StatelessWidget {
                     child: Column(
                       children: [
                         const Text(
-                          "Total",
+                          "Total Price :",
                           style: TextStyle(
                               fontSize: 17,
                               color: Colors.red,

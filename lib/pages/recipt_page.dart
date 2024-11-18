@@ -33,7 +33,7 @@ class ReciptPage extends StatelessWidget {
               icon: const Icon(Icons.home))
         ],
         title: const Center(
-          child: Text("Reciept"),
+          child: Text("Receipt"),
         ),
       ),
       body: Center(
@@ -51,7 +51,7 @@ class ReciptPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     const Text(
-                      "ORDER CONFORMATION",
+                      "ORDER CONFIRMATION",
                       style:
                           TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                     ),
@@ -63,7 +63,7 @@ class ReciptPage extends StatelessWidget {
                     const Column(
                       children: [
                         Text(
-                          "We've recived your order. You will recive a reciept",
+                          "We've received your order. You will receive a receipt",
                           style: TextStyle(fontSize: 12),
                         ),
                         Text(
@@ -106,9 +106,9 @@ class ReciptPage extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Contace : ${contact}"),
-                            Text("Building : ${building}"),
-                            Text("Room No : ${room}")
+                            Text("Contact No : $contact"),
+                            Text("Building Name: $building"),
+                            Text("Room No : $room")
                           ],
                         ),
                       ),

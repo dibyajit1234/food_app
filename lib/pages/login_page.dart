@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:uem_food/functions/auth_service.dart';
 import 'package:uem_food/pages/home_page.dart';
 import 'package:uem_food/pages/register_page.dart';
+import 'dart:developer';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -22,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
         automaticallyImplyLeading: false,
         title: const Center(
           child: Text(
-            "^ Food Plaza ^",
+            "^ Snacky Panda ^",
             style: TextStyle(
                 fontFamily: 'updock', fontSize: 55, color: Colors.red),
           ),
@@ -92,7 +93,8 @@ class _LoginPageState extends State<LoginPage> {
                     final user = await _auth.loginWithEmailAndPassword(
                         _email.text, _password.text);
                     if (user != null) {
-                      print("user  logged in succesfully");
+                      log("user  logged in succesfully");
+                      // ignore: use_build_context_synchronously
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) {
@@ -101,6 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       );
                     } else {
+                      // ignore: use_build_context_synchronously
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
                           content: Text(

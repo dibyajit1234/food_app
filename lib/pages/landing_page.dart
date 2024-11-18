@@ -16,6 +16,7 @@ class _LandingPageState extends State<LandingPage>
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     Future.delayed(const Duration(seconds: 3), () {
+      // ignore: use_build_context_synchronously
       Navigator.of(context)
           .pushReplacement(MaterialPageRoute(builder: (context) {
         return const LoginPage();
@@ -42,7 +43,7 @@ class _LandingPageState extends State<LandingPage>
           child: const Expanded(
             child: Center(
               child: Text(
-                "Food Plaza",
+                "Snacky Panda",
                 style: TextStyle(
                     fontSize: 80, color: Colors.white, fontFamily: "updock"),
               ),

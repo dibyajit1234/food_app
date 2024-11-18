@@ -206,14 +206,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_email_sender:
-    dependency: "direct main"
-    description:
-      name: flutter_email_sender
-      sha256: fb515d4e073d238d0daf1d765e5318487b6396d46b96e0ae9745dbc9a133f97a
-      url: "https://pub.dev"
-    source: hosted
-    version: "6.0.3"
   flutter_launcher_icons:
     dependency: "direct main"
     description:
@@ -230,14 +222,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.3"
-  flutter_mailer:
-    dependency: "direct main"
-    description:
-      name: flutter_mailer
-      sha256: "4fffaa35e911ff5ec2e5a4ebbca62c372e99a154eb3bb2c0bf79f09adf6ecf4c"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.2"
   flutter_test:
     dependency: "direct dev"
     description: flutter

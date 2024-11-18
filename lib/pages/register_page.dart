@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:uem_food/functions/auth_service.dart';
 import 'package:uem_food/pages/home_page.dart';
 import 'package:uem_food/pages/login_page.dart';
+import 'dart:developer';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -23,7 +24,7 @@ class _RegisterPageState extends State<RegisterPage> {
         automaticallyImplyLeading: false,
         title: const Center(
           child: Text(
-            "^ Food Plaza ^",
+            "^ Snacky Panda ^",
             style: TextStyle(
                 fontFamily: 'updock', fontSize: 55, color: Colors.red),
           ),
@@ -92,7 +93,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 controller: _password,
                 obscureText: true,
                 decoration: const InputDecoration(
-                  hintText: "Password",
+                  hintText: "Create Password",
                   enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.black)),
                   focusedBorder: OutlineInputBorder(
@@ -111,10 +112,12 @@ class _RegisterPageState extends State<RegisterPage> {
                 final user = await _auth.signInWithEmailAndPassword(
                     _email.text, _password.text);
                 if (user != null) {
-                  print("user created successfully");
+                  log("user created successfully");
+                  // ignore: use_build_context_synchronously
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => const HomePage()));
                 } else {
+                  // ignore: use_build_context_synchronously
                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       duration: Duration(seconds: 1),
                       content: Text("Invalid username or password!")));

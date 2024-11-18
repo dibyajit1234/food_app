@@ -53,13 +53,13 @@ final resturants = [
       },
       {
         'id': 8,
-        'title': 'parata',
+        'title': 'Paratha',
         'price': 60,
         'imageUrl': "assets/images/paratha.png",
       },
       {
         'id': 9,
-        'title': 'Singara',
+        'title': 'Samosa',
         'price': 15,
         'imageUrl': "assets/images/singara.jpeg",
       },
@@ -89,7 +89,7 @@ final resturants = [
       },
       {
         'id': 14,
-        'title': 'Loti Choco Pie',
+        'title': 'Lotte Choco Pie',
         'price': 10,
         'imageUrl': "assets/images/lotichocopie.jpeg",
       },
@@ -215,7 +215,7 @@ final resturants = [
       },
       {
         'id': 9,
-        'title': 'Bingo Tere Mere',
+        'title': 'Bingo Tedhe Medhe',
         'price': 20,
         'imageUrl': 'assets/images/bingo.jpeg',
       },
@@ -299,19 +299,19 @@ final resturants = [
       },
       {
         'id': 9,
-        'title': 'Hakka Noddles Half',
+        'title': 'Hakka Noodles Half',
         'price': 55,
         'imageUrl': "assets/images/hakka.jpeg",
       },
       {
         'id': 10,
-        'title': 'Hakka Noddles Full',
+        'title': 'Hakka Noodles Full',
         'price': 100,
         'imageUrl': "assets/images/hakka.jpeg",
       },
       {
         'id': 11,
-        'title': 'Chicken Triple Noodles',
+        'title': 'Chicken Noodles',
         'price': 80,
         'imageUrl': "assets/images/Chicken Triple Noodles.jpeg",
       },
@@ -377,7 +377,7 @@ final resturants = [
       },
       {
         'id': 1,
-        'title': 'Pattis',
+        'title': 'Patties',
         'price': 30,
         'imageUrl': "assets/images/patties.jpeg",
       },
@@ -389,7 +389,7 @@ final resturants = [
       },
       {
         'id': 3,
-        'title': 'Omlette',
+        'title': 'Omelette',
         'price': 30,
         'imageUrl': "assets/images/omelette_PNG26.png",
       },
@@ -413,7 +413,7 @@ final resturants = [
       },
       {
         'id': 7,
-        'title': 'Bread Pakora',
+        'title': 'Bread Pakoda',
         'price': 25,
         'imageUrl': 'assets/images/bread pakora.jpeg',
       },

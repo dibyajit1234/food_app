@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:uem_food/functions/cart_provider.dart';
 import 'package:uem_food/functions/firestore.dart';
 import 'package:uem_food/pages/recipt_page.dart';
+import 'dart:developer';
 
 class PaymentPage extends StatefulWidget {
   final dynamic totalprice;
@@ -29,7 +30,7 @@ class _PaymentPageState extends State<PaymentPage> {
         building.text.isEmpty ||
         room.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('All fields are required!')),
+        const SnackBar(content: Text('All fields are required!!')),
       );
       return false;
     }
@@ -39,15 +40,9 @@ class _PaymentPageState extends State<PaymentPage> {
   @override
   Widget build(BuildContext context) {
     final cart = Provider.of<CartProvider>(context, listen: true).cart;
-    ;
     FirebaseAuth.instance;
     final user = FirebaseAuth.instance.currentUser;
     String userEmail = user?.email ?? '';
-    @override
-    void initState() {
-      super.initState();
-      setState(() {});
-    }
 
     Future sendEmail({
       required String username,
@@ -81,9 +76,9 @@ class _PaymentPageState extends State<PaymentPage> {
         ),
       );
       if (response.statusCode != 200) {
-        print("email not send${response.body}");
+        log("email not send${response.body}");
       } else {
-        print("email sent successfully");
+        log("email sent successfully");
       }
     }
 
@@ -141,7 +136,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                 borderSide:
                                     BorderSide(color: Colors.red, width: 2),
                               ),
-                              hintText: "Contace No",
+                              hintText: "Contact No.",
                               border: OutlineInputBorder(
                                   borderSide: BorderSide(width: 2))),
                         ),
@@ -177,7 +172,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                 borderSide:
                                     BorderSide(color: Colors.red, width: 2),
                               ),
-                              hintText: "Room no.",
+                              hintText: "Room No.",
                               border: OutlineInputBorder(
                                   borderSide: BorderSide(width: 2))),
                         ),
@@ -187,7 +182,7 @@ class _PaymentPageState extends State<PaymentPage> {
                 ),
               ),
               const Text(
-                "* We provide cash on delivary only!!",
+                "* We provide cash on delivery only!!",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               Container(
@@ -204,7 +199,7 @@ class _PaymentPageState extends State<PaymentPage> {
                         child: Column(
                           children: [
                             const Text(
-                              "Total",
+                              "Total Price :",
                               style: TextStyle(
                                   fontSize: 17,
                                   color: Colors.red,
@@ -255,8 +250,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                 username: name.text,
                                 email: userEmail,
                                 subject: 'Order conformation',
-                                message:
-                                    'your order is confirmed. Your total bill is ${widget.totalprice}. Your products will be delevered as soon as possible, Thank you for choosing Foodplaza.');
+                                message: '${widget.totalprice}');
                           } else {
                             ScaffoldMessenger.of(context)
                                 .showSnackBar(const SnackBar(
