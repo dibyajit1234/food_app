@@ -49,7 +49,6 @@ class CartPage extends StatelessWidget {
                         "Rs. ${cart[index]['price']}                       Quantity : ${cart[index]['itemcount']}"),
                     leading: CircleAvatar(
                       backgroundImage: AssetImage(cart[index]['imageUrl']),
-                      backgroundColor: Colors.red,
                     ),
                     trailing: IconButton(
                       onPressed: () {

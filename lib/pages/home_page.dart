@@ -56,8 +56,6 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(
                 height: 70,
                 child: DrawerHeader(
-                  margin: EdgeInsets.all(0),
-                  padding: EdgeInsets.all(0),
                   decoration: BoxDecoration(color: Colors.grey),
                   child: Center(
                     child: Text(

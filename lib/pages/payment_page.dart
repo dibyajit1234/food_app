@@ -24,18 +24,6 @@ class _PaymentPageState extends State<PaymentPage> {
   final contact = TextEditingController();
   final building = TextEditingController();
   final room = TextEditingController();
-  bool validateInput() {
-    if (name.text.isEmpty ||
-        contact.text.isEmpty ||
-        building.text.isEmpty ||
-        room.text.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('All fields are required!!')),
-      );
-      return false;
-    }
-    return true;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -249,7 +237,7 @@ class _PaymentPageState extends State<PaymentPage> {
                             sendEmail(
                                 username: name.text,
                                 email: userEmail,
-                                subject: 'Order conformation',
+                                subject: 'Order confi rmation',
                                 message: '${widget.totalprice}');
                           } else {
                             ScaffoldMessenger.of(context)

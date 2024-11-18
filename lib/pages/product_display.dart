@@ -166,7 +166,9 @@ class _ProductDisplay extends State<ProductDisplay> {
                               const SnackBar(
                                   duration: Duration(seconds: 1),
                                   content: Text("Item is added to cart !")));
-                          itemcount = 1;
+                          setState(() {
+                            itemcount = 1;
+                          });
                         },
                         child: const Text(
                           "Add to cart",
