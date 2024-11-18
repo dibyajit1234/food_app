@@ -237,7 +237,7 @@ class _PaymentPageState extends State<PaymentPage> {
                             sendEmail(
                                 username: name.text,
                                 email: userEmail,
-                                subject: 'Order confi rmation',
+                                subject: 'Order confirmation',
                                 message: '${widget.totalprice}');
                           } else {
                             ScaffoldMessenger.of(context)

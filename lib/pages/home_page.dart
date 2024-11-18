@@ -1,11 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:uem_food/functions/auth_service.dart';
 import 'package:uem_food/functions/globalvariable.dart';
 import 'package:uem_food/pages/cart_page.dart';
 import 'package:uem_food/pages/login_page.dart';
-import 'dart:developer';
 import 'package:uem_food/pages/product_list.dart';
 
 class HomePage extends StatefulWidget {
@@ -21,10 +19,7 @@ class _HomePageState extends State<HomePage> {
   final auth = AuthService();
   @override
   Widget build(BuildContext context) {
-    FirebaseAuth.instance;
-    final user = FirebaseAuth.instance.currentUser;
-    String userEmail = user?.email ?? '';
-    log('Logged-in user email: $userEmail');
+
 
     return SafeArea(
       child: Scaffold(
