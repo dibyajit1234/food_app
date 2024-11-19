@@ -72,7 +72,7 @@ class _ProductListState extends State<ProductList> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Foodplaza",
+                        "Snacky Panda",
                         style: TextStyle(fontFamily: "updock", fontSize: 45),
                       ),
                     ],
